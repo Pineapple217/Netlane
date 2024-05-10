@@ -1,0 +1,30 @@
+package view
+
+import (
+	s "github.com/Pineapple217/Netlane/pkg/static"
+)
+
+templ boiler() {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+			<meta name="theme-color" content="#F7208B"/>
+			<meta name="darkreader-lock"/>
+			<link rel="stylesheet" href={ s.StaticMap["/static/css/main.css"] }/>
+			<title>Netlane</title>
+		</head>
+		<a href="/auth" accesskey="a" aria-hidden="true" tabindex="-1"></a>
+		<a href="/media" accesskey="m" aria-hidden="true" tabindex="-1"></a>
+		<a href="/backup" accesskey="b" aria-hidden="true" tabindex="-1"></a>
+		{ children... }
+	</html>
+}
+
+templ Home() {
+	@boiler() {
+		<div>Hello :3</div>
+	}
+}
